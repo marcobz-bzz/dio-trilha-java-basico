@@ -9,30 +9,36 @@
 
 ## Diagrama de Classes
 
-### Exemplo de Diagrama UML (Mermaid)
-
-### Exemplo de Diagrama UML (Mermaid)
 ```mermaid
+---
+title: Modelagem do iPhone
+---
 classDiagram
-    class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
-    }
 
-    class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
-    }
+class ReprodutorMusical {
+<<interface>>
++tocar()
++pausar()
++selecionarMusica(musica:String)
+}
 
-    class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
-    }
+class AparelhoTelefonico {
+<<interface>>
++ligar(numero:String)
++atender()
++iniciarCorreioVoz()
+}
 
-    class iPhone {
-    }
+class NavegadorInternet {
+<<interface>>
++exibirPagina(url:String)
++adicionarNovaAba()
++atualizarPagina()
+}
 
-    iPhone --> ReprodutorMusical
-    iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
+class IPhone 
+
+IPhone ..> ReprodutorMusical
+IPhone ..> AparelhoTelefonico
+IPhone ..> NavegadorInternet
 ```
