@@ -41,4 +41,9 @@ class IPhone
 IPhone ..> ReprodutorMusical
 IPhone ..> AparelhoTelefonico
 IPhone ..> NavegadorInternet
+
+style IPhone fill:#FECF6A,stroke:#DF1C44,stroke-width:4px,color:black
 ```
+
+---
++ + +
