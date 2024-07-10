@@ -1,4 +1,4 @@
-package dio.iphone.model;
+package br.edu.dio.iphone.model;
 
 public interface ReprodutorMusical {
 
