@@ -6,3 +6,5 @@ Crie uma classe chamada "CarrinhoDeCompras" que representa um carrinho de compra
 + removerItem(String nome): Remove um item do carrinho com base no seu nome.
 + calcularValorTotal(): Calcula e retorna o valor total do carrinho, levando em consideração o preço e a quantidade de cada item.
 + exibirItens(): Exibe todos os itens presentes no carrinho, mostrando seus nomes, preços e quantidades.
+
++ + +
