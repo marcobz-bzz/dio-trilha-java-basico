@@ -9,6 +9,7 @@ public class App {
 
         agc.adicionarContato("marco", 33589473);
         agc.exibirContatos();
+        System.out.println("==========================");
 
         agc.adicionarContato("Marco", 33589473);
         agc.adicionarContato("Caca", 33589474);
@@ -16,6 +17,7 @@ public class App {
         agc.adicionarContato("Onça", 33589476);
 
         agc.exibirContatos();
+        System.out.println("==========================");
 
         System.out.println(agc.atualizarNumeroContato("MARCO", 144));
         agc.exibirContatos();

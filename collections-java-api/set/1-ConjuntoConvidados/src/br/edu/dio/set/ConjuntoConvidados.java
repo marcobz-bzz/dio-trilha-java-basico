@@ -19,7 +19,7 @@ public class ConjuntoConvidados {
         for(Convidado cc : convidadosSet){
             if(cc.getCodigoConvite() == codigoConvite){
                 convidadosSet.remove(cc);
-                break;
+                return;
             }
         }
     }
