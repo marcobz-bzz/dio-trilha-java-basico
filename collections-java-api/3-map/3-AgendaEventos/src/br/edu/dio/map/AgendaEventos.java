@@ -1,6 +1,5 @@
 package br.edu.dio.map;
 
-import java.security.KeyStore.Entry;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
