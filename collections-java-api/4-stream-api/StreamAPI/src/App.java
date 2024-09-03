@@ -157,6 +157,30 @@ public class App {
             }
 
         }).max(Comparator.naturalOrder()).get());
+        // metodo 2
+        Predicate<Integer> findPrimo = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer num) {
+                if (num <= 1)
+                    return false;
+                if (num == 2 || num == 3)
+                    return true;
+                if (num % 2 == 0 || num % 3 == 0)
+                    return false;
+
+                // Verifica a divisibilidade até a raiz quadrada do número
+                for (int i = 5; i * i <= num; i += 6) {
+                    if (num % i == 0 || num % (i + 2) == 0)
+                        return false;
+                }
+                return true;
+            }
+        };
+
+        System.out.println("## metodo2 - primos");
+        System.out.println(nn.stream()
+                .filter(findPrimo::test)
+                .max(Comparator.naturalOrder()).get());
 
         // Desafio 15 - Verifique se a lista contém pelo menos um número negativo
         System.out.println(">> 15. Verifique se a lista contém pelo menos um número negativo");
@@ -177,7 +201,7 @@ public class App {
                 .collect(Collectors.toList());
         System.out.println("pares: " + pares + "\nimpares: " + impares);
 
-        // segundo método
+        // segundo método 2
         System.out.println("## método 2");
         Map<Boolean, List<Integer>> paresEimpares = nn.stream()
                 .collect(Collectors.partitioningBy(n -> n % 2 == 0));
@@ -233,8 +257,8 @@ public class App {
         // outro método
         System.out.println("## método 2");
         System.out.println(nn.stream()
-        .filter(n -> (n % 3 == 0) || (n % 5 == 0))
-        .mapToInt(Integer::intValue).sum());
+                .filter(n -> (n % 3 == 0) || (n % 5 == 0))
+                .mapToInt(Integer::intValue).sum());
     }
 
 }
