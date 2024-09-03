@@ -235,7 +235,6 @@ public class App {
         System.out.println(nn.stream()
         .filter(n -> (n % 3 == 0) || (n % 5 == 0))
         .mapToInt(Integer::intValue).sum());
-
     }
 
 }
