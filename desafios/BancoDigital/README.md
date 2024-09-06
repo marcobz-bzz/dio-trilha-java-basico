@@ -1,18 +1,27 @@
-## Getting Started
+# [DIO](www.dio.me) - Trilha Java Básico
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+---
+## Autor
+- [Marco Bezerra](https://github.com/marcobz-bzz)
 
-## Folder Structure
+---
+## POO - Desafio
 
-The workspace contains two folders by default, where:
+---
+### Modelagem e Diagramação de um Componente iPhone
+[Projeto iPhone](https://github.com/marcobz-bzz/dio-trilha-java-basico/tree/main/desafios/poo)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
+## Diagrama de Classes
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```mermaid
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```
+---
+## Implmentação em Java
+Usando VScode, em:
 
-## Dependency Management
+https://github.com/marcobz-bzz/dio-trilha-java-basico/tree/main/desafios/desafios/BancoDigital
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
++ + +
