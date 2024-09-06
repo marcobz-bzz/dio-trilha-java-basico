@@ -21,7 +21,7 @@
 ## Implmentação em Java
 Usando VScode, em:
 
-https://github.com/marcobz-bzz/dio-trilha-java-basico/tree/main/desafios/desafios/BancoDigital
+https://github.com/marcobz-bzz/dio-trilha-java-basico/tree/main/desafios/BancoDigital
 
 ---
 + + +
