@@ -177,7 +177,7 @@ public class BancoDigital {
         System.out.println("---------------------------------------------------------------------------------");
         double saldo = contasSet.stream().filter(cc -> cc.getClienteCpf() == cpf)
                 .mapToDouble(cc -> cc.getSaldo()).sum();
-        System.out.println("Saldo: "+Util.doubleToBRL(saldo));
+        System.out.println("Saldo: " + Util.doubleToBRL(saldo));
         System.out.println("=================================================================================");
     }
 
