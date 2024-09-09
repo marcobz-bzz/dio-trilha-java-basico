@@ -85,7 +85,7 @@ BancoDigital "1" -- "*" Cliente
 BancoDigital "1" -- "*" ContaAbstract
 Util -- BancoDigital
 
-style BancoDigital fill:#FECF6A,stroke:#DF1C44,stroke-width:4px,color:white
+style BancoDigital fill:#FECF6A,stroke:#DF1C44,stroke-width:4px,color:blue
 style Operacao fill:#FEF9D9,stroke:#8EACCD,stroke-width:2px,color:black
 style Util fill:#FEF9D9,stroke:#8EACCD,stroke-width:2px,color:black
 ```
