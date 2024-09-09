@@ -8,14 +8,25 @@ class ContaCorrente extends ContaAbstract {
     }
 
     public double getLimite() {
-        return getSaldo() > 0 ? LIMITE_PADRAO : LIMITE_PADRAO + getSaldo();
+        if (getSaldo() < 0)
+            return LIMITE_PADRAO + getSaldo();
+        return LIMITE_PADRAO;
     }
 
     @Override
     public String toString() {
         return "Conta Corrente " + Util.idContaFormatador(getIdConta()) +
-                " :: saldo: " + Util.doubleToBRL(getSaldo())+
-                " :: limite: "+Util.doubleToBRL(getLimite());
+                " :: saldo: " + Util.doubleToBRL(getSaldo()) +
+                " :: limite: " + Util.doubleToBRL(getLimite()) +
+                " :: disponível: " + Util.doubleToBRL(getLimite());
+    }
+
+    @Override
+    public boolean sacar(double valor) {
+        if (valor > getSaldo() + LIMITE_PADRAO)
+            return false;
+        super.ajSaldo(valor);
+        return true;
     }
 
 }

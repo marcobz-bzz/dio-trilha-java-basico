@@ -23,6 +23,9 @@ title: Modelagem do Banco Digital
 classDiagram
 
 class Util {
+    -CPF_RECEITA_FEDERAL_MAP:Map~String,String~ $
+    +verificarCpfNomeReceitaFederal(...)$ boolean
+    +verificarCpfValidoReceitaFederal(...)$ boolean
     +doubleToBRL(double)$ String
     +idContaFormatador(int)$ String
 }
@@ -36,15 +39,19 @@ class ContaAbstract {
     +getClienteCpf() String
     +getIdConta() int
     +depositar(double) void
+    #ajSaldo(double) void
 }
 
 class ContaCorrente{
     -LIMITE_PADRAO:double $
+    +sacar(double) boolean
 }
-ContaCorrente --|> ContaAbstract
+ContaAbstract <|-- ContaCorrente
 
-class ContaPoupanca
-ContaPoupanca --|> ContaAbstract
+class ContaPoupanca{
+    +sacar(double) boolean
+}
+ContaAbstract <|-- ContaPoupanca
 
 class Cliente {
     -nome:String
@@ -59,23 +66,23 @@ class Operacao {
     CONTA_CORRENTE
     POUPANCA
 }
-BancoDigital -- Operacao
+Operacao -- BancoDigital
 
 class BancoDigital{
-    -CPF_RECEITA_FEDERAL_MAP:Map~String,String~ $
     -nomeBanco:String
     -numeroAgencia:int
     -cpfClientesMap:Map~cpf:String,Cliente~
     -contasSet:Set~Conta~
-    -verificarCpfNomeReceitaFederal(...)$ boolean
     -autenticarCliente(...)$ boolean
     +cadastrarCliente(...) boolean
     +criarConta(...) int
-    +depositar(...) boolean
+    +depositar(...) void
+    +sacar(...) void
     +printSaldoConta(...) void
 }
 BancoDigital "1" -- "*" Cliente
 BancoDigital "1" -- "*" ContaAbstract
+Util -- BancoDigital
 
 style BancoDigital fill:#FECF6A,stroke:#DF1C44,stroke-width:4px,color:black
 style Operacao fill:#FEF9D9,stroke:#8EACCD,stroke-width:2px,color:black
@@ -94,7 +101,8 @@ O Cliente é o Ator principal, que interage diretamente com o Banco.
 4. Imprimir o saldo de uma conta — utiliza o **cpf** e a **senha** [para autenticar], e o **número (id)** da conta.
 5. Sacar um valor da conta — utiliza o **cpf** e a **senha** [para autenticar], e o **número (id)** da conta.
    A Conta Corrente permite utilizr o **LIMITE** banćario.
-6. xxx
+6. Transferir de uma conta para outra — utiliza o **cpf** e a **senha** [para autenticar], e o **número (id)** da conta de origem, o **número (id)** da conta de destino e o **valor**.
+7. Gerar extrato do cliente — utiliza o **cpf** e a **senha** [para autenticar].
 
 
 ---

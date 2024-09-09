@@ -20,13 +20,19 @@ abstract class ContaAbstract {
         return idConta;
     }
 
-    public double getSaldo(){
+    public double getSaldo() {
         return saldo;
     }
 
-    public void depositar(double valor){
+    public void depositar(double valor) {
         this.saldo += valor;
     }
+
+    protected void ajSaldo(double valor){
+        saldo -= valor;
+    }
+
+    public abstract boolean sacar(double valor);
 
     public abstract String toString();
 
