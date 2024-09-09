@@ -160,7 +160,7 @@ public class BancoDigital {
             System.out.println(">> Usuãrio não autenticado!!");
             return;
         }
-        // XXXX
+
         System.out.println("=================================================================================");
         System.out.println("                    " + this);
         System.out.println("                               E X T R A T O");
