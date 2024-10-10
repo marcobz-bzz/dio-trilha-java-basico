@@ -10,9 +10,9 @@ import dio.spring_web_api.model.Usuario;
 public class UsuarioMockRepositorio {
     public void save(Usuario usuario) {
         if (usuario.getIdUsuario() == null) {
-            System.out.println(">>> salvando usuario: " + usuario.getNome());
+            System.out.println(">>> salvando usuario: " + usuario);
         } else {
-            System.out.println(">>> atualizando usuario: " + usuario.getNome());
+            System.out.println(">>> atualizando usuario: " + usuario);
         }
     }
 
