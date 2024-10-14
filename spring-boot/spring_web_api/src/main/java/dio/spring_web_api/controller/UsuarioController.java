@@ -32,7 +32,7 @@ public class UsuarioController {
     }
     
     @GetMapping("/pornome/{username}")
-    public List<Usuario> getUsuarioPorNome(String username) {
+    public List<Usuario> getUsuarioPorNome(@PathVariable String username) {
         return repositorio.findByNome(username);
     }
     

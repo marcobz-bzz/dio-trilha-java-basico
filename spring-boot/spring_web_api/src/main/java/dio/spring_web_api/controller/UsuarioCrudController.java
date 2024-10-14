@@ -40,7 +40,7 @@ public class UsuarioCrudController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteUsuario(Integer id){
+    public void deleteUsuario(@PathVariable Integer id){
         repositorio.deleteById(id);
     }
 
