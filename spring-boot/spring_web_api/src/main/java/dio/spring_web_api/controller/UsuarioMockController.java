@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import dio.spring_web_api.handler.BusinessException;
 import dio.spring_web_api.model.Usuario;
 import dio.spring_web_api.repository.UsuarioMockRepositorio;
 
@@ -39,6 +40,10 @@ public class UsuarioMockController {
 
     @PostMapping("/usuarios")
     public void saveUsuario(@RequestBody Usuario usuario) {
+        if (usuario.getNome() == null) {
+            throw new BusinessException("O nome do usuário é obrigatório");
+        }
+
         System.out.println("+++++ " + usuario);
         if (usuario.getIdUsuario() == null) {
             System.out.println(">>> salvar: " + usuario);
