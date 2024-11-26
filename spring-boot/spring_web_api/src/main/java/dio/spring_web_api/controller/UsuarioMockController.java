@@ -44,6 +44,10 @@ public class UsuarioMockController {
             throw new BusinessException("O nome do usuário é obrigatório");
         }
 
+        if(usuario.getPassword() == null){
+            throw new RuntimeException("+++>>>> senha nula!!!!!!");
+        }
+
         System.out.println("+++++ " + usuario);
         if (usuario.getIdUsuario() == null) {
             System.out.println(">>> salvar: " + usuario);
